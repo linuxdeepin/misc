@@ -1,3 +1,4 @@
+#!/bin/bash
 # MIT License
 # Copyright (c) [2021] [CodeSH]
 # deepin团队祝大家圣诞快乐！
@@ -33,7 +34,7 @@ function tree() {
 	for ((i=1; i<$((LINES)); i+=2))
 	{
 		lineSpace=''
-		for ((k=1; k<=$((COLUMNS/2-i)); k++)) {
+		for ((k=1; k<=$((COLUMNS/2-i+9)); k++)) {
 			lineSpace=$lineSpace'\x20'
 		}
 		for ((j=1; j<=i*2; j++)) {
@@ -50,7 +51,7 @@ function tree() {
 	for ((i=1; i<=6; i++))
 	{
 		lineSpace=''
-		for ((j=1; j<=$((COLUMNS/2-5)); j++)) {
+		for ((j=1; j<=$((COLUMNS/2+3)); j++)) {
 			lineSpace=$lineSpace'\x20'
 		}
 		if [ $i -lt 5 ];
@@ -60,7 +61,7 @@ function tree() {
 		if [ $i -eq 5 ];
 			then
 				lineSpace=''
-				for ((j=1; j<=$((COLUMNS/2-8)); j++)) {
+				for ((j=1; j<=$((COLUMNS/2)); j++)) {
 					lineSpace=$lineSpace'\x20'
 				}
 				strTree=$strTree'\n'$lineSpace'Merry Christmas'
@@ -68,10 +69,10 @@ function tree() {
 		if [ $i -eq 6 ];
 			then
 				lineSpace=''
-				for ((j=1; j<=$((COLUMNS/3-5)); j++)) {
+				for ((j=1; j<=$((COLUMNS/3+7)); j++)) {
 					lineSpace=$lineSpace'\x20'
 				}
-				strTree=$strTree'\n'$lineSpace'    Deepin will be with you forever'
+				strTree=$strTree'\n'$lineSpace'Deepin will be with you forever'
 		fi
 		
 	}
